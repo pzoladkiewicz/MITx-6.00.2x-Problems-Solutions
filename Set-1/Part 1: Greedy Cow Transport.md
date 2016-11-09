@@ -1,5 +1,5 @@
 #####Part 1: Greedy Cow Transport
-One way of transporting cows is to always pick the **eaviest cow that will fit** onto the spaceship first. This is an example of a greedy algorithm. So if there are only 2 tons of free space on your spaceship, with one cow that's 3 tons and another that's 1 ton, the 1 ton cow will get put onto the spaceship.
+One way of transporting cows is to always pick the **heaviest cow that will fit** onto the spaceship first. This is an example of a greedy algorithm. So if there are only 2 tons of free space on your spaceship, with one cow that's 3 tons and another that's 1 ton, the 1 ton cow will get put onto the spaceship.
 
 Implement a greedy algorithm for transporting the cows back across space in the function ```greedy_cow_transport```. The function returns a list of lists, where each inner list represents a trip and contains the names of cows taken on that trip.
 
