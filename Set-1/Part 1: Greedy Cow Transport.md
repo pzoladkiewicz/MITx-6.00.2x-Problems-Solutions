@@ -22,7 +22,7 @@ For the second trip, the greedy algorithm first picks ```Maggie``` as the heavie
 
 The final result then is ```[["Jesse", "Maybel"], ["Maggie", "Callie"]]```.
 
-```
+```py
 def greedy_cow_transport(cows, maxWeight):
     output = []
 
