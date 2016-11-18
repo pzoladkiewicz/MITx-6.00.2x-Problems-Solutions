@@ -37,41 +37,42 @@ The brute force algorithm will first try to fit them on only one trip, ```["Jess
 
 The final result is then ```[["Jesse", "Callie"], ["Maybel", "Maggie"]]```. Note that depending on which cow it tries first, the algorithm may find a different, optimal solution. Another optimal result could be ```[["Jesse", "Maybel"],["Callie", "Maggie"]]```.
    
+```py
+def brute_force_cow_transport(cows, maxWeight):
+    output = []
 
-    def brute_force_cow_transport(cows, maxWeight):
-        output = []
+    # worst scenario - we need as many trips as number of cows
+    bestTrips = len(cows)
 
-        # worst scenario - we need as many trips as number of cows
-        bestTrips = len(cows)
+    # for every combination of set of cows
+    for cowSet in (get_partitions(cows)):
+        weight = 0 
 
-        # for every combination of set of cows
-        for cowSet in (get_partitions(cows)):
-            weight = 0 
+        # for every list of cows in combination
+        for c in cowSet:
+            tempW = 0
 
-            # for every list of cows in combination
-            for c in cowSet:
-                tempW = 0
+            # for every cow in list
+            # sum cows temp weight
+            # and if it is larger than previous previous list
+            # make it largest
+            for x in c:
+                tempW += cows[x]
+            if tempW > weight: weight = tempW
 
-                # for every cow in list
-                # sum cows temp weight
-                # and if it is larger than previous previous list
-                # make it largest
-                for x in c:
-                    tempW += cows[x]
-                if tempW > weight: weight = tempW
+        # if cow set weight is in cargo limit
+        if weight <= maxWeight:
 
-            # if cow set weight is in cargo limit
-            if weight <= maxWeight:
+            # if number of trips if better than previous
+            # clear transport list and start new one
+            if len(cowSet) < bestTrips:
+                output = []
+                bestTrips = len(cowSet)
+                output.append(cowSet)
+            # if numbet of trips is equal
+            # just add set to possible combinations
+            elif len(cowSet) == bestTrips:
+                output.append(cowSet)
 
-                # if number of trips if better than previous
-                # clear transport list and start new one
-                if len(cowSet) < bestTrips:
-                    output = []
-                    bestTrips = len(cowSet)
-                    output.append(cowSet)
-                # if numbet of trips is equal
-                # just add set to possible combinations
-                elif len(cowSet) == bestTrips:
-                    output.append(cowSet)
-
-        return output
+    return output
+```
