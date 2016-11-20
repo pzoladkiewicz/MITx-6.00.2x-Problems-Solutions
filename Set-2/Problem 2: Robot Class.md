@@ -43,7 +43,7 @@ class Robot(object):
         
         self.room = room
         self.speed = speed
-        self.robotDirection = random.uniform(0, 361)
+        self.robotDirection = random.uniform(0, 360)
         self.robotPosition = self.room.getRandomPosition()
         self.room.cleanTileAtPosition(self.robotPosition)
 
