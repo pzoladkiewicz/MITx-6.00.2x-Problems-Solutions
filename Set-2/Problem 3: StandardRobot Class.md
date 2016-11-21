@@ -1,5 +1,3 @@
-
-
 Each robot must also have some code that tells it how to move about a room, which will go in a method called ```updatePositionAndClean```.
 
 Ordinarily we would consider putting all the robot's methods in a single class. However, later in this problem set we'll consider robots with alternate movement strategies, to be implemented as different classes with the same interface. These classes will have a different implementation of ```updatePositionAndClean``` but are for the most part the same as the original robots. Therefore, we'd like to use inheritance to reduce the amount of duplicated code.
@@ -51,3 +49,27 @@ Before moving on to Problem 4, check that your implementation of ```StandardRobo
 
 
 Enter your code for classes ```Robot``` (from the previous problem) and ```StandardRobot``` below.
+
+```py
+class StandardRobot(Robot):
+    """
+    A StandardRobot is a Robot with the standard movement strategy.
+
+    At each time-step, a StandardRobot attempts to move in its current
+    direction; when it would hit a wall, it *instead* chooses a new direction
+    randomly.
+    """
+    def updatePositionAndClean(self):
+        """
+        Simulate the raise passage of a single time-step.
+
+        Move the robot to a new position and mark the tile it is on as having
+        been cleaned.
+        """
+        self.newPosition = Position.getNewPosition(self.getRobotPosition(), self.robotDirection, self.speed)
+        if self.room.isPositionInRoom(self.newPosition):
+            self.setRobotPosition(self.newPosition)
+            self.room.cleanTileAtPosition(self.getRobotPosition())
+        else:
+            self.setRobotDirection(random.uniform(0, 361))
+```
