@@ -10,7 +10,7 @@ This function should return the computed R^2 value. You can compute R^2 as follo
 ![R2](https://d37djvu3ytnwxt.cloudfront.net/assets/courseware/v1/83df4c1c72ef01bd64e3ff4af2d2f60c/asset-v1:MITx+6.00.2x_6+3T2016+type@asset+block/r2.PNG)
 
 If you are still confused about R^2 , its [wikipedia page](https://en.wikipedia.org/wiki/Coefficient_of_determination) has a good explanation about its use/how to calculate it.
-```py
+```python
 import numpy as np
 
 def r_squared(y, estimated):
