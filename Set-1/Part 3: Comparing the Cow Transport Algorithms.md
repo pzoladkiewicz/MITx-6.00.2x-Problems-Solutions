@@ -1,6 +1,6 @@
 ##### Part 3: Compare the Algorithms
 
-Implement '''compare_cow_transport_algorithms'''. Load the cow data in *ps1_cow_data.txt*, and then run your greedy and brute force cow transport algorithms on the data to find the minimum number of trips found by each algorithm and how long each method takes. Use the default weight limits of 10 for both algorithms. Make sure you’ve tested both your greedy and brute force algorithms before you implement this!
+Implement ```compare_cow_transport_algorithms```. Load the cow data in *ps1_cow_data.txt*, and then run your greedy and brute force cow transport algorithms on the data to find the minimum number of trips found by each algorithm and how long each method takes. Use the default weight limits of 10 for both algorithms. Make sure you’ve tested both your greedy and brute force algorithms before you implement this!
 
 Hints:
 
