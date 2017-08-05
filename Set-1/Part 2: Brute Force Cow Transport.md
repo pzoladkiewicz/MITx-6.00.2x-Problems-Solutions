@@ -4,12 +4,12 @@ Another way to transport the cows is to look at **every possible combination of 
 
 Implement a brute force algorithm to find the **minimum number of trips** needed to take all the cows across the universe in the function ```brute_force_cow_transport```. The function returns a list of lists, where each inner list represents a trip and contains the names of cows taken on that trip.
 
-####Notes:
+#### Notes:
 
 * Make sure not to mutate the dictionary of cows!
 * In order to enumerate all possible combinations of trips, you will want to work with set partitions. We have provided you with a helper function called get_partitions that generates all the set partitions for a set of cows. More details on this function are provided below.
 
-####Assumptions:
+#### Assumptions:
 
 * Assume that order doesn't matter. (1) ```[[1,2],[3,4]]``` and ```[[3,4],[1,2]]``` are considered equivalent lists of trips. (2) ```[[1,2],[3,4]]``` and ```[[2,1],[3,4]]``` are considered the same partitions of ```[1,2,3,4]```.
 * You can assume that all the cows are between 0 and 100 tons in weight.
@@ -29,7 +29,7 @@ You can review more on generators in the Lecture 2 Exercise 1. To use generators
 
     for partition in get_partitions([1,2,3]):
         print(partition)
-#####Example:
+##### Example:
 
 Suppose the spaceship has a cargo weight limit of 10 tons and the set of cows to transport is ```{"Jesse": 6, "Maybel": 3, "Callie": 2, "Maggie": 5}```.
 
@@ -37,7 +37,7 @@ The brute force algorithm will first try to fit them on only one trip, ```["Jess
 
 The final result is then ```[["Jesse", "Callie"], ["Maybel", "Maggie"]]```. Note that depending on which cow it tries first, the algorithm may find a different, optimal solution. Another optimal result could be ```[["Jesse", "Maybel"],["Callie", "Maggie"]]```.
    
-```py
+```python
 def brute_force_cow_transport(cows, maxWeight):
     output = []
 
